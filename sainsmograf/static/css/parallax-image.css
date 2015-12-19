@@ -1,0 +1,18 @@
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.full-width img {
+  width: 100%;
+  position: absolute;
+}
+
+.parallax-image-caption {
+  background: #333;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #dedede;
+}

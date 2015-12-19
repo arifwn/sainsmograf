@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title|default('Blog') }}</title>
+  {% include 'head.html' %}
+</head>
+<body>
+
+  {% include 'content_header.html' %}
+
+  <div class="content-list">
+
+    {% for post in posts %}
+    <div class="content-item">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+      <div class="meta">
+      <span class="date" title="{{ post.date }}">{{ post.date }}</span> by 
+      {% if post.author_url %}
+      <a href="{{ post.author_url }}">{{ post.author|default('Unknown') }}</a>
+      {% else %}
+      {{ post.author|default('Unknown') }}
+      {% endif %}
+      </div>
+
+      <div class="excerpt"><a href="{{ post.url }}">{{ post.get_excerpt() }}</a></div>
+    </div>
+    {% endfor %}
+    
+  </div>
+
+
+  {% include 'scripts.html' %}
+
+  <script type="text/javascript">
+
+  $(function () {
+    $('.content-item .meta .date').each(function (key, item) {
+      var fromNow = moment($(item).html(), "YYYY-MM-DD hh:mm:ss").fromNow();
+      $(item).html(fromNow);
+    });
+  });
+
+  </script>
+
+  {% include 'content_footer.html' %}
+</body>
+</html>

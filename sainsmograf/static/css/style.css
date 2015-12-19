@@ -1,0 +1,276 @@
+
+body {
+  margin: 0;
+  padding: 74px 0 0 0;
+  color: rgb(79, 79, 79);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 21px;
+  line-height: 1.6;
+  font-family: Georgia;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+}
+
+.main-nav {
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: solid 1px #acacac;
+  padding: 20px 0;
+  z-index: 9;
+  background: #fff;
+  opacity: 0.9;
+  box-sizing: border-box;
+}
+
+.main-nav-absolute {
+  position: absolute;
+}
+
+.main-nav-fixed {
+  position: fixed;
+}
+
+.main-nav .nav-container {
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-nav .logo {
+  display: inline-block;
+  color: rgb(79, 79, 79);
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+      padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.main-nav .logo img {
+  display: inline-block;
+}
+
+.main-nav .nav-container .nav-links {
+  display: block;
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav .nav-container .nav-links > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.main-nav .nav-container .nav-links > li > a {
+  color: rgb(79, 79, 79);
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 640px) {
+
+body {
+  padding: 70px 0 0 0;
+}
+
+.main-nav {
+  padding: 5px 0;
+}
+
+.main-nav .nav-container {
+  text-align: center;
+}
+
+.main-nav .nav-container .nav-links {
+  display: block;
+  float: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.main-nav .logo img {
+    height: 20px;
+}
+
+}
+
+article,
+.content-list {
+  position: relative;
+  color: rgb(79, 79, 79);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 21px;
+  line-height: 1.6;
+  font-family: Georgia;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+article section {
+  margin-top: 40px;
+}
+
+article section,
+article .meta,
+article h1,
+article hr,
+.content-list {
+  width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+article h1 {
+  margin-bottom: 0;
+}
+
+article .meta {
+  font-size: 14px;
+  color: #ababab;
+}
+
+article section a {
+  color: rgb(79, 79, 79);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+article section p > img {
+  max-width: 100%;
+}
+
+article .cover-image {
+  position: relative;
+  width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+article .cover-image img {
+  display: block;
+  width: 100%;
+}
+
+article .cover-image .cover-image-credit {
+  text-align: center;
+  font-size: 12px;
+  color: #ababab;
+}
+
+article .cover-image .cover-image-credit a {
+  color: #ababab;
+}
+
+.footer {
+  padding-top: 20px;
+  color: rgb(130, 130, 130);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.footer .footer-container {
+  width: 670px;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-top: solid 1px #cdcdcd;
+  font-size: 14px;
+  text-align: center;
+}
+
+.content-list h2 {
+  margin-bottom: 0;
+}
+
+.content-list h2 a,
+.content-list .excerpt a {
+  color: rgb(79, 79, 79);
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+.content-item .meta {
+  font-size: 14px;
+  color: #ababab;
+  margin-bottom: 10px;
+}
+
+#disqus_thread {
+  width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-top: solid 1px #cdcdcd;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.front-page article > h1{
+  text-align: center;
+  font-style: italic;
+}
+
+.front-page .parallax {
+  height: 600px;
+}
+
+.front-page article .cover-image-credit {
+  text-align: right;
+}
+
+.front-page article .cover-image-credit a {
+  font-size: 16px;
+  color: #ababab;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+  .front-page .parallax {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  article {
+    width: 100%;
+  }
+
+  article section,
+  article .meta,
+  article h1,
+  article hr,
+  .content-list {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  article .cover-image {
+    width: 100%;
+  }
+
+
+  .footer .footer-container {
+    width: 100%;
+  }
+
+  #disqus_thread {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .front-page .parallax {
+    height: 300px;
+  }
+
+}
