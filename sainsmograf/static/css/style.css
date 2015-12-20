@@ -181,7 +181,7 @@ article section p > img {
   text-align: center;
   width: 100%;
   font-size: 50px;
-  color: #333;
+  color: #000;
   text-shadow: 0 0 10px white;
 }
 
@@ -286,6 +286,13 @@ article section p > img {
     width: 100%;
   }
 
+  .cover-image > .parallax h1 {
+    font-size: 35px;
+  }
+
+  .cover-image > .parallax .meta {
+    font-size: 25px;
+  }
 
   .footer .footer-container {
     width: 100%;
