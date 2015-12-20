@@ -22,9 +22,9 @@
       {% if post.cover_image_type == 'parallax' %}
       <div class="parallax" data-parallax="scroll" data-image-src="{{ post.cover_image|safe }}">
 
-        <h1>{{ post.title }}</h1>
+        <h1 class="{{ post.title_class|default('') }}">{{ post.title }}</h1>
         {% if post.subtitle %}
-        <div class="meta">{{ post.subtitle }}</div>
+        <div class="meta {{ post.subtitle_class|default('') }}">{{ post.subtitle }}</div>
         {% endif %}
 
       </div>

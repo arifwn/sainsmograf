@@ -182,7 +182,7 @@ article section p > img {
   width: 100%;
   font-size: 50px;
   color: #000;
-  text-shadow: 0 0 10px white;
+  text-shadow: 0 0 10px #fff;
 }
 
 .cover-image > .parallax .meta {
@@ -192,6 +192,18 @@ article section p > img {
   text-align: center;
   color: #000;
   text-shadow: 0 0 10px #fff;
+}
+
+.cover-image > .parallax h1.invert,
+.cover-image > .parallax .meta.invert {
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.cover-image > .parallax h1.brown,
+.cover-image > .parallax .meta.brown {
+  color: #511511;
+  text-shadow: 0 0 10px #FDFDFD;
 }
 
 .cover-image .cover-image-credit {
