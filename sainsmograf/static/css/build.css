@@ -99,24 +99,6 @@ green     #859900  operators, other keywords
 .codehilitetable .code .codehilite { width: 300px; }
 }
 
-.parallax {
-  position: relative;
-  overflow: hidden;
-}
-
-.full-width img {
-  width: 100%;
-  position: absolute;
-}
-
-.parallax-image-caption {
-  background: #333;
-  padding: 10px;
-  font-family: sans-serif;
-  font-size: 12px;
-  color: #dedede;
-}
-
 body {
   margin: 0;
   padding: 74px 0 0 0;
@@ -279,9 +261,37 @@ article section p > img {
   margin-bottom: 40px;
 }
 
-.cover-image img {
+.cover-image.full-bleed {
+  width: 100%;
+  margin-top: 0;
+}
+
+.cover-image > img {
   display: block;
   width: 100%;
+}
+
+.cover-image > .parallax {
+  height: 500px;
+}
+
+.cover-image > .parallax h1 {
+  margin: 0;
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+  font-size: 50px;
+  color: #333;
+  text-shadow: 0 0 10px white;
+}
+
+.cover-image > .parallax .meta {
+  margin: 0;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
 }
 
 .cover-image .cover-image-credit {
@@ -358,12 +368,6 @@ article section p > img {
 }
 
 @media screen and (max-width: 900px) {
-  .front-page .parallax {
-    height: 450px;
-  }
-}
-
-@media screen and (max-width: 640px) {
   article {
     width: 100%;
   }
@@ -394,7 +398,22 @@ article section p > img {
   }
 
   .front-page .parallax {
+    height: 450px;
+  }
+
+  .cover-image > .parallax {
     height: 300px;
   }
 
+}
+
+@media screen and (max-width: 640px) {
+
+  .front-page .parallax {
+    height: 300px;
+  }
+
+  .cover-image > .parallax {
+    height: 300px;
+  }
 }

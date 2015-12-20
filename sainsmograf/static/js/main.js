@@ -17,10 +17,11 @@
       
       // scroll detection
       var position = $(window).scrollTop();
+      var $mainNav = $('.main-nav');
 
       $(window).scroll(function () {
           var scroll = $(window).scrollTop();
-          var height = parseInt($('.main-nav').css('height'));
+          var height = parseInt($mainNav.css('height'));
           var currentPos = 0,
               newPos = 0;
 
@@ -30,29 +31,32 @@
 
           if (scroll > position) {
               // scrolling down
-              if ($('.main-nav').hasClass('main-nav-fixed')) {
-                currentPos = parseInt($('.main-nav').css('top'));
+              if ($mainNav.hasClass('main-nav-fixed')) {
+                currentPos = parseInt($mainNav.css('top'));
                 newPos = currentPos - (scroll - position);
                 newPos = newPos < (-height) ? (-height) : newPos;
 
-                $('.main-nav').css('top', newPos);
+                $mainNav.css('top', newPos);
               }
 
           } else {
               // scrolling up
-              if ($('.main-nav').hasClass('main-nav-absolute')) {
-                $('.main-nav').removeClass('main-nav-absolute').addClass('main-nav-fixed').css('top', -height);
+              if ($mainNav.hasClass('main-nav-absolute')) {
+                $mainNav.removeClass('main-nav-absolute').addClass('main-nav-fixed').css('top', -height);
               }
-              else if ($('.main-nav').hasClass('main-nav-fixed')) {
-                currentPos = parseInt($('.main-nav').css('top'));
+              else if ($mainNav.hasClass('main-nav-fixed')) {
+                currentPos = parseInt($mainNav.css('top'));
                 newPos = currentPos + (position - scroll);
                 newPos = newPos > 0 ? 0 : newPos;
 
-                $('.main-nav').css('top', newPos);
+                $mainNav.css('top', newPos);
               }
           }
 
           position = scroll;
+          if (position === 0) {
+            $mainNav.css('top', 0);
+          }
       }); 
 
     }

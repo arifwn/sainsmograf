@@ -11,7 +11,7 @@ import sainsmograf.views
 js = Bundle(
             'js/jquery-2.1.4.min.js',
             'js/moment.min.js',
-            'js/parallax-image.js',
+            'js/parallax.min.js',
             'js/main.js',
             filters='rjsmin', output='js/build.js'
             )
@@ -19,7 +19,6 @@ js = Bundle(
 css = Bundle(
             'css/font-awesome.min.css',
             'css/solarized-dark.css',
-            'css/parallax-image.css',
             'css/style.css',
             output='css/build.css'
             )

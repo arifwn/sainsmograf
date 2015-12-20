@@ -4,7 +4,7 @@
   <title><![CDATA[{{ config.SITE_NAME }}]]></title>
   <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/atom.xml" rel="self"/>
   <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/"/>
-  <updated>{{ date.isoformat() }}</updated>
+  <updated>{{ date.strftime('%Y-%m-%d') }}</updated>
   <id>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/</id>
   <author>
     <name><![CDATA[{{ config.SITE_AUTHOR|default('Unknown') }}]]></name>
@@ -17,7 +17,7 @@
   <entry>
     <title type="html"><![CDATA[Cryptography Primer]]></title>
     <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ post.url }}"/>
-    <updated>{{ post.date.isoformat() }}</updated>
+    <updated>{{ post.date.strftime('%Y-%m-%d') }}</updated>
     <id>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ post.url }}</id>
     <content type="html"><![CDATA[
       {{ post.get_html_content()|safe }}
