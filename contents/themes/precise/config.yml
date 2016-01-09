@@ -1,0 +1,12 @@
+---
+name: Precise
+author: Arif Widi Nugroho <arif@sainsmograf.com> 
+js:
+  - 'js/jquery-2.1.4.min.js'
+  - 'js/moment.min.js'
+  - 'js/parallax.min.js'
+  - 'js/main.js'
+css:
+  - 'css/font-awesome.min.css'
+  - 'css/solarized-dark.css'
+  - 'css/style.css'

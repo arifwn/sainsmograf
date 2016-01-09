@@ -12,6 +12,7 @@ import traceback
 user_settings = {}
 static_folder = os.path.join(os.getcwd(), 'contents/themes/precise/static')
 template_folder = os.path.join(os.getcwd(), 'contents/themes/precise/templates')
+template_config_path = os.path.join(os.getcwd(), 'contents/themes/precise/config.yml')
 
 try:
     import settings
@@ -25,6 +26,7 @@ try:
 
     static_folder = os.path.join(os.getcwd(), 'contents/themes/{0}/static'.format(user_settings.get('THEME', 'precise')))
     template_folder = os.path.join(os.getcwd(), 'contents/themes/{0}/templates'.format(user_settings.get('THEME', 'precise')))
+    template_config_path = os.path.join(os.getcwd(), 'contents/themes/{0}/config.yml'.format(user_settings.get('THEME', 'precise')))
 
 except Exception, e:
     print('unable to read user settings')
@@ -42,18 +44,17 @@ import ssbp.views
 
 # load theme
 
+import yaml
+with open(template_config_path) as f:
+    theme_config = yaml.load(f)
+
 js = Bundle(
-        'js/jquery-2.1.4.min.js',
-        'js/moment.min.js',
-        'js/parallax.min.js',
-        'js/main.js',
+        *(theme_config.get('js', [])),
         filters='rjsmin', output='js/build.js'
         )
 
 css = Bundle(
-        'css/font-awesome.min.css',
-        'css/solarized-dark.css',
-        'css/style.css',
+        *(theme_config.get('css', [])),
         output='css/build.css'
         )
 
