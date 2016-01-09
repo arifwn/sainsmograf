@@ -9,6 +9,8 @@ from flask.ext.assets import Environment, Bundle
 # load user settings
 import traceback
 
+version = '0.1'
+
 user_settings = {}
 static_folder = os.path.join(os.getcwd(), 'contents/themes/precise/static')
 template_folder = os.path.join(os.getcwd(), 'contents/themes/precise/templates')
