@@ -6,20 +6,35 @@ from flask import g
 
 from ssbp import app
 
-@app.route('/')
-def index():
-    return render_template('index.html', static_navbar=True)
+
+def get_site_options():
+    return {
+        'server_name': app.config.get('TARGET_SERVER_NAME', 'localhost'),
+        'server_protocol': app.config.get('TARGET_SERVER_PROTOCOL', 'http'),
+        'name': app.config.get('SITE_NAME', 'My Blog'),
+        'author': app.config.get('SITE_AUTHOR', 'Unknown'),
+        'footer': app.config.get('SITE_FOOTER', ''),
+        'main_menu': app.config.get('SITE_MAIN_MENU', []),
+    }
+
+
+# @app.route('/')
+# def index():
+#     site = get_site_options()
+#     return render_template('index.html', site=site, static_navbar=True)
 
 
 @app.route('/atom.xml')
 def atom():
+    site = get_site_options()
     now = datetime.utcnow()
-    xml = render_template('atom.xml', date=now, posts=app.config['post_manager'].posts)
+    xml = render_template('atom.xml', site=site, date=now, posts=app.config['post_manager'].posts)
     return Response(xml, mimetype='text/xml')
 
 
 @app.route('/sitemap.xml')
 def sitemap():
+    site = get_site_options()
     links = []
 
     def has_no_empty_params(rule):
@@ -33,7 +48,7 @@ def sitemap():
             links.append((url, rule.endpoint))
 
     now = datetime.utcnow()
-    xml = render_template('sitemap.xml', date=now, links=links)
+    xml = render_template('sitemap.xml', site=site, date=now, links=links)
     return Response(xml, mimetype='text/xml')
 
 
@@ -53,37 +68,41 @@ def cname():
 
 @app.route('/robots.txt')
 def robots():
-    server_name = app.config.get('TARGET_SERVER_NAME', 'localhost')
-    server_protocol = app.config.get('TARGET_SERVER_PROTOCOL', 'http')
+    site = get_site_options()
     return '''
 User-agent: *
 Disallow: 
 
 Sitemap: {0}://{1}/sitemap.xml 
-    '''.format(server_protocol, server_name)
+    '''.format(site['server_protocol'], site['server_name'])
 
 
-@app.route('/blog/')
+@app.route(app.config.get('BLOG_ROOT_URL', '/'))
 def blog_index():
+    site = get_site_options()
     with app.test_request_context():
-        return render_template('blog-index.html', posts=app.config['post_manager'].posts)
+        return render_template('blog-index.html', site=site, posts=app.config['post_manager'].posts)
 
 @app.route('/tags/')
 def tags_index():
+    site = get_site_options()
     with app.test_request_context():
-        return render_template('tags-index.html', tags=app.config['post_manager'].tags)
+        return render_template('tags-index.html', site=site, tags=app.config['post_manager'].tags)
 
 
 def view_page(page):
-    return render_template('layouts/%s.html' % page.layout, post=page)
+    site = get_site_options()
+    return render_template('layouts/%s.html' % page.layout, site=site, post=page)
 
 
 def view_post(post):
-    return render_template('layouts/%s.html' % post.layout, post=post)
+    site = get_site_options()
+    return render_template('layouts/%s.html' % post.layout, site=site, post=post)
 
 
 def view_tag(tag, posts):
-    return render_template('blog-index.html', title=tag.upper(), posts=posts)
+    site = get_site_options()
+    return render_template('blog-index.html', site=site, title=tag.upper(), posts=posts)
 
 
 @app.template_filter()

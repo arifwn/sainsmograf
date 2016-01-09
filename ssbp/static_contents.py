@@ -253,7 +253,8 @@ class Post(Page):
     def parse_header(self):
         super(Post, self).parse_header()
 
-        self.url = '/blog/%s/%s/' % (self.date.strftime('%Y/%m/%d'), self.slug)
+        blog_root_url = app.config.get('BLOG_ROOT_URL', '/')
+        self.url = '{0}{1}/{2}/'.format(blog_root_url, self.date.strftime('%Y/%m/%d'), self.slug)
 
 
 def make_views():

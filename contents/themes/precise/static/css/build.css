@@ -367,15 +367,21 @@ article section p > img {
 
 .front-page .parallax {
   height: 600px;
+  position: relative;
 }
 
 .front-page .cover-image-credit {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
   text-align: right;
 }
 
 .front-page .cover-image-credit a {
   font-size: 12px;
-  color: #ababab;
+  color: #fff;
+  text-shadow: 0 0 5px black;
+  opacity: .5;
   text-decoration: none;
 }
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ post.title }}</title>
+  {% include 'head.html' %}
+</head>
+<body class="front-page">
+
+  {% include 'content_header.html' %}
+  
+  {% if post.cover %}
+    {% if post.cover.image_type == 'parallax' %}
+    <div class="parallax" data-parallax="scroll" data-image-src="{{ post.cover.image }}">
+      <div class="cover-image-credit">
+      {% if post.cover.image_credit_url %}
+        <a href="{{ post.cover.image_credit_url }}">{{ post.cover.image_credit }}</a>
+        {% else %}
+        {{ post.cover.image_credit }}
+      {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  {% endif %}
+
+  <article>
+    {{ post.get_html_content()|safe }}
+  </article>
+
+  {% include 'scripts.html' %}
+
+  {% include 'content_footer.html' %}
+</body>
+</html>
