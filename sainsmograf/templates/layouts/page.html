@@ -9,18 +9,18 @@
   {% include 'content_header.html' %}
 
   <article>
-    {% if post.cover_image_type != 'parallax' %}
+    {% if post.cover and post.cover.image_type != 'parallax' %}
     <h1>{{ post.title }}</h1>
     {% if post.subtitle %}
     <div class="meta">{{ post.subtitle }}</div>
     {% endif %}
     {% endif %}
 
-    {% if post.cover_image %}
-    <div class="cover-image {% if post.cover_image_type == 'parallax' %} full-bleed {% endif %}">
+    {% if post.cover and post.cover.image %}
+    <div class="cover-image {% if post.cover.image_type == 'parallax' %} full-bleed {% endif %}">
 
-      {% if post.cover_image_type == 'parallax' %}
-      <div class="parallax" data-parallax="scroll" data-image-src="{{ post.cover_image|safe }}">
+      {% if post.cover.image_type == 'parallax' %}
+      <div class="parallax" data-parallax="scroll" data-image-src="{{ post.cover.image|safe }}">
 
         <h1 class="{{ post.title_class|default('') }}">{{ post.title }}</h1>
         {% if post.subtitle %}
@@ -29,16 +29,16 @@
 
       </div>
       {% else %}
-      <img src="{{ post.cover_image|safe }}" alt="">
+      <img src="{{ post.cover.image|safe }}" alt="">
       {% endif %}
 
-      {% if post.cover_image_credit %}
+      {% if post.cover.image_credit %}
       <div class="cover-image-credit">
         Photo:
-        {% if post.cover_image_credit_url %}
-        <a href="{{ post.cover_image_credit_url }}">{{ post.cover_image_credit }}</a>
+        {% if post.cover.image_credit_url %}
+        <a href="{{ post.cover.image_credit_url }}">{{ post.cover.image_credit }}</a>
         {% else %}
-        {{ post.cover_image_credit }}
+        {{ post.cover.image_credit }}
         {% endif %}
       </div>
       {% endif %}

@@ -192,13 +192,6 @@ class Page(object):
         page_config = yaml.load(raw_header)
 
         for key, value in page_config.iteritems():
-
-            if key == 'date':
-                value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M')
-
-            if key == 'tags':
-                value = value.split(', ')
-
             setattr(self, key, value)
 
         if self.slug is None:

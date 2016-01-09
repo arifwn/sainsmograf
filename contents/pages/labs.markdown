@@ -3,10 +3,11 @@ layout: page
 title: Labs
 subtitle: Silly little projects made in my spare time.
 url: /labs/
-cover_image: https://lh3.googleusercontent.com/-85etacmh3fo/VnPtpiF_Q1I/AAAAAAAAANE/TvlDswlHQtc/s0-Ic42/labs.jpg
-cover_image_type: parallax
-cover_image_credit: Flickr/Yesmoke
-cover_image_credit_url: https://www.flickr.com/photos/23636244@N08/2264878494/
+cover:
+  image: https://lh3.googleusercontent.com/-85etacmh3fo/VnPtpiF_Q1I/AAAAAAAAANE/TvlDswlHQtc/s0-Ic42/labs.jpg
+  image_type: parallax
+  image_credit: Flickr/Yesmoke
+  image_credit_url: https://www.flickr.com/photos/23636244@N08/2264878494/
 ---
 
 - [T9 Predictive Text Input Emulator](/labs/t9-emulator/). Words prediction from numerical keypad input.

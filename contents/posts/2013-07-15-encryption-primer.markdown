@@ -1,16 +1,19 @@
 ---
 layout: post
 title: Cryptography Primer
-date: 2013-07-15 20:37
+date: 2013-07-15 20:37:00
 author: Arif Widi Nugroho
 comments: true
 published: true
-tags: security
-thumbnail_image: https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAAL4/RhVNE0DVTpA/s512-Ic42/nasa-computer.jpg
-cover_image: https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAALk/cvo4D4kRGoM/s0-Ic42/nasa-computer.jpg
-cover_image_type: parallax
-cover_image_credit: Flickr/sdasmarchives
-cover_image_credit_url: https://www.flickr.com/photos/sdasmarchives/7142833961/in/photolist-bTbTFF-otXi2j-nVQPYP-n9rcU9-bj1YYt-8DvP53-8DsGTK-7DciyW-oY1k5k-rj2dBj-cu7N3w-fqoBre-7GW3vA-bUzA79-kUBmeB-rj2Dt3-cGwSTs-fqmRFa-fqAsj7-fqmRep-cA7iYE-fqCRPQ-cu7K8f-bTbTnV-cE7acq-do6Ecy-brSvCA-8DsG3M-8DsG48-8DsGSK-8DsHCr-fq21Zf-bTbTAX-75wpJV-fpLiRX-fpNgdH-qr3Eta-otGFQz-octmDQ-bUy2Zf-fqoC5n-otYDDT-xVZqTZ-ovJjaB-dWrkiU-orX2vL-octVuQ-orWDrA-ocu4LP-octXrL
+tags:
+  - security
+thumbnail:
+  image: https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAAL4/RhVNE0DVTpA/s512-Ic42/nasa-computer.jpg
+cover:
+  image: https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAALk/cvo4D4kRGoM/s0-Ic42/nasa-computer.jpg
+  image_type: parallax
+  image_credit: Flickr/sdasmarchives
+  image_credit_url: https://www.flickr.com/photos/sdasmarchives/7142833961/in/photolist-bTbTFF-otXi2j-nVQPYP-n9rcU9-bj1YYt-8DvP53-8DsGTK-7DciyW-oY1k5k-rj2dBj-cu7N3w-fqoBre-7GW3vA-bUzA79-kUBmeB-rj2Dt3-cGwSTs-fqmRFa-fqAsj7-fqmRep-cA7iYE-fqCRPQ-cu7K8f-bTbTnV-cE7acq-do6Ecy-brSvCA-8DsG3M-8DsG48-8DsGSK-8DsHCr-fq21Zf-bTbTAX-75wpJV-fpLiRX-fpNgdH-qr3Eta-otGFQz-octmDQ-bUy2Zf-fqoC5n-otYDDT-xVZqTZ-ovJjaB-dWrkiU-orX2vL-octVuQ-orWDrA-ocu4LP-octXrL
 excerpt: In general, cryptography is used to transform a string of text into a convoluted gibberish that do not have any resemblance to the original text whatsoever to a person without access to its encryption key. That original string of text is called plaintext, and the resulting gibberish is called cyphertext.
 ---
 
