@@ -2,7 +2,7 @@
 import datetime
 import unittest
 
-from sainsmograf.static_contents import PostManager, Post, PageManager, Page
+from ssbp.static_contents import PostManager, Post, PageManager, Page
 
 class TestPostMarkdown(unittest.TestCase):
     def setUp(self):

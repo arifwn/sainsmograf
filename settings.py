@@ -1,5 +1,5 @@
 
-from sainsmograf import app
+from ssbp import app
 
 app.config.update(
     TARGET_SERVER_NAME='www.sainsmograf.com',

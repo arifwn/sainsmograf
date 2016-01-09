@@ -5,8 +5,8 @@ from flask.ext.assets import Environment, Bundle
 app = Flask(__name__)
 assets = Environment(app)
 
-import sainsmograf.settings
-import sainsmograf.views
+import ssbp.settings
+import ssbp.views
 
 js = Bundle(
             'js/jquery-2.1.4.min.js',

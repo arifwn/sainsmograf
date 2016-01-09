@@ -3,7 +3,7 @@
 import unittest
 import settings
 
-from sainsmograf.tests import *
+from ssbp.tests import *
 
 
 if __name__ == '__main__':

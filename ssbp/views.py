@@ -4,7 +4,7 @@ from flask import Flask, url_for, redirect
 from flask import Response, render_template
 from flask import g
 
-from sainsmograf import app
+from ssbp import app
 
 @app.route('/')
 def index():
@@ -53,12 +53,14 @@ def cname():
 
 @app.route('/robots.txt')
 def robots():
+    server_name = app.config.get('TARGET_SERVER_NAME', 'localhost')
+    server_protocol = app.config.get('TARGET_SERVER_PROTOCOL', 'http')
     return '''
 User-agent: *
 Disallow: 
 
-Sitemap: http://www.sainsmograf.com/sitemap.xml 
-    '''
+Sitemap: {0}://{1}/sitemap.xml 
+    '''.format(server_protocol, server_name)
 
 
 @app.route('/blog/')
