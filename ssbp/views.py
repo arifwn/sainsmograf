@@ -15,6 +15,8 @@ def get_site_options():
         'author': app.config.get('SITE_AUTHOR', 'Unknown'),
         'footer': app.config.get('SITE_FOOTER', ''),
         'main_menu': app.config.get('SITE_MAIN_MENU', []),
+        'blog_title': app.config.get('BLOG_TITLE'),
+        'blog_cover': app.config.get('BLOG_COVER')
     }
 
 
@@ -81,7 +83,7 @@ Sitemap: {0}://{1}/sitemap.xml
 def blog_index():
     site = get_site_options()
     with app.test_request_context():
-        return render_template('blog-index.html', site=site, posts=app.config['post_manager'].posts)
+        return render_template('blog-index.html', title=site['blog_title'], site=site, posts=app.config['post_manager'].posts)
 
 @app.route('/tags/')
 def tags_index():

@@ -8,8 +8,9 @@
 
   {% include 'content_header.html' %}
 
+  {% if site.blog_cover %}
   <div class="cover-image full-bleed">
-    <div class="parallax" data-parallax="scroll" data-image-src="https://lh3.googleusercontent.com/-2Xz7TgC6jJA/VnSqkWk7BJI/AAAAAAAAAOM/m__ku2lvDTs/s0-Ic42/blog.jpg">
+    <div class="parallax" data-parallax="scroll" data-image-src="{{ site.blog_cover.image }}">
 
       <h1 class="invert">{{ title|default('Archive') }}</h1>
 
@@ -18,11 +19,12 @@
     <div class="cover-image-credit">
       Photo:
       
-      <a href="https://www.flickr.com/photos/spam/5086168739/in/photolist-8KrWLt-fQnF3F-zeT59-hQupeu-mcyTCH-2XUSwK-6wKZGK-dSWYv6-9r9hTB-7JYMRm-npfs53-bnd6HC-dpMa6R-5Z7tu9-igTjs-znX36-bq9JVL-8MgCm1-i6Xpna-5GuxsL-4szPdJ-8qwP9e-zLV8Y-82ipB5-5K9py8-wCLUzs-r51nHF-qMs9B8-roGB1x-He1VQ-rnAbiN-r3emMW-ghnoDc-sQvQ2d-jynQwe-4xKrcM-4d3PzE-nWwB5Y-e2UoN2-g1aQen-fLjZdH-4Sr6vm-zzBDQu-rq8uC9-cBPses-aGsNy4-rV93Kr-aNSd7p-uaM1uZ-3n3ub8">Flickr/spam</a>
+      <a href="{{ site.blog_cover.image_credit_url }}">{{ site.blog_cover.image_credit }}</a>
       
     </div>
     
   </div>
+  {% endif %}
 
   <div class="content-list">
 
