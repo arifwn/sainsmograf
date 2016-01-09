@@ -6,7 +6,7 @@ author: Arif Widi Nugroho
 comments: true
 published: true
 tags: security
-thumbnail_image:https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAAL4/RhVNE0DVTpA/s512-Ic42/nasa-computer.jpg
+thumbnail_image: https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAAL4/RhVNE0DVTpA/s512-Ic42/nasa-computer.jpg
 cover_image: https://lh3.googleusercontent.com/-e1-ir9ypUts/VnMeBtkOV_I/AAAAAAAAALk/cvo4D4kRGoM/s0-Ic42/nasa-computer.jpg
 cover_image_type: parallax
 cover_image_credit: Flickr/sdasmarchives

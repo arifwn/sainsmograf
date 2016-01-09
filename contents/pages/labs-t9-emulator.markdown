@@ -2,7 +2,6 @@
 layout: page
 title: T9 Predictive Text Input Emulator
 url: /labs/t9-emulator/
-comments: true
 ---
 
 This is a [T9 Predictive Text Input Emulator](http://en.wikipedia.org/wiki/T9_(predictive_text)), implemented using [Trie](http://en.wikipedia.org/wiki/Trie).

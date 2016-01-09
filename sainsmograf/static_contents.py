@@ -148,13 +148,13 @@ class Page(object):
                 if line.strip() == '---':
                     dash_counter += 1
 
+                if dash_counter == 2:
+                    break
+
                 if raw_header is None:
                     raw_header = line.decode('UTF-8')
                 else:
                     raw_header += line.decode('UTF-8')
-
-                if dash_counter == 2:
-                    break
 
         return raw_header
 
@@ -178,31 +178,6 @@ class Page(object):
 
         return raw_content
 
-    def parse_header_value(self, text):
-        if text == '---':
-            return
-
-        elements = text.split(':')
-        if len(elements) < 2:
-            return;
-
-        key = elements[0].strip()
-        value = text[len(key) + 1:].strip()
-
-        if key == 'date':
-            value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M')
-
-        if key == 'comments' or key == 'published':
-            if value == 'true':
-                value = True
-            else:
-                value = False
-
-        if key == 'tags':
-            value = value.split(', ')
-
-        return key, value
-
     def parse_header(self):
         base, ext = os.path.splitext(self.content_file)
         if ext in ('.md', '.markdown'):
@@ -212,16 +187,19 @@ class Page(object):
 
         raw_header = self.get_raw_header()
 
-        header_io = StringIO(raw_header)
-        while True:
-            line = header_io.readline()
-            if line != '':
-                line = line.strip('\n')
-                value = self.parse_header_value(line)
-                if value:
-                    setattr(self, value[0], value[1])
-            else:
-                break
+        import yaml
+
+        page_config = yaml.load(raw_header)
+
+        for key, value in page_config.iteritems():
+
+            if key == 'date':
+                value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M')
+
+            if key == 'tags':
+                value = value.split(', ')
+
+            setattr(self, key, value)
 
         if self.slug is None:
             self.slug = slugify(self.title)

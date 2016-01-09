@@ -12,7 +12,7 @@ class TestPostMarkdown(unittest.TestCase):
         self.post.process_meta()
         self.assertEqual(self.post.title, 'Cryptography Primer')
         self.assertEqual(self.post.slug, 'cryptography-primer')
-        self.assertEqual(self.post.url, '/blog/2013-07-15-cryptography-primer/')
+        self.assertEqual(self.post.url, '/blog/2013/07/15/cryptography-primer/')
         self.assertEqual(self.post.date, datetime.datetime(2013, 7, 15, 20, 37))
         self.assertEqual(self.post.tags, ['security'])
         self.assertEqual(self.post.published, True)
