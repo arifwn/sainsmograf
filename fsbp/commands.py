@@ -16,7 +16,12 @@ def run():
         from fsbp import app
         from fsbp.static_contents import make_views
         make_views()
-        app.run(debug=False)
+
+        host = args.command[1] if len(args.command) > 1 else '127.0.0.1'
+        port = int(args.command[2]) if len(args.command) > 2 else 5000
+
+        app.debug = True
+        app.run(host, port)
 
 
     if args.command[0] == 'generate':        
