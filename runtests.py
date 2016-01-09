@@ -3,7 +3,7 @@
 import unittest
 import settings
 
-from ssbp.tests import *
+from fsbp.tests import *
 
 
 if __name__ == '__main__':

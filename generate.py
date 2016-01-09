@@ -2,8 +2,8 @@
 
 from flask_frozen import Freezer
 
-from ssbp import app
-from ssbp.static_contents import make_views
+from fsbp import app
+from fsbp.static_contents import make_views
 import settings
 
 if __name__ == '__main__':

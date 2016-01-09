@@ -8,28 +8,10 @@ Site improvements:
 
 Make the static site generator installable from pip
 
-- pip install Flask-Static-Gen
-- flask_static_gen create "sitename"
-- created file structure:
-	- config.yml
-	- contents
-		- pages
-		- posts
-	- themes
-		- default
-			- templates
-				- layouts
-					- page.html
-					- post.html
-				- includes
-					- head.html
-					- scripts.html
-					- header.html
-					- footer.html
-				- index.html
-				- posts.html
-			- static
-				- css
-				- js
-				- img
-				- fonts			
+- pip install fsbp
+- fsbp create "sitename"
+- ./static add page "page title" [page-slug]
+- ./static add post "post title" [post-slug]
+- ./static generate
+- ./static test
+- ./static runserver [127.0.0.1:5000]

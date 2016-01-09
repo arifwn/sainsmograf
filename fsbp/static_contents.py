@@ -7,8 +7,8 @@ from functools import partial
 from flask import g
 from jinja2 import Template
 
-from ssbp import app
-from ssbp.utils import slugify
+from fsbp import app
+from fsbp.utils import slugify
 
 
 class PostManager(object):
@@ -264,7 +264,7 @@ def make_views():
     post_manager.load_posts()
     page_manager.load_pages()
 
-    from ssbp.views import view_page, view_post
+    from fsbp.views import view_page, view_post
 
     post_manager.register_views(view_post)
     page_manager.register_views(view_page)

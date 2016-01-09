@@ -4,7 +4,7 @@ from flask import Flask, url_for, redirect
 from flask import Response, render_template
 from flask import g
 
-from ssbp import app
+from fsbp import app
 
 
 def get_site_options():

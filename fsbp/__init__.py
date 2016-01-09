@@ -36,11 +36,11 @@ except Exception, e:
 app = Flask(__name__, static_folder=static_folder, template_folder=template_folder)
 assets = Environment(app)
 
-import ssbp.settings
+import fsbp.settings
 app.config.update(user_settings)
 
 
-import ssbp.views
+import fsbp.views
 
 # load theme
 
