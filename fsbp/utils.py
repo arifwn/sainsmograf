@@ -48,12 +48,9 @@ def create_content(content_type, title, slug=None):
 
     header_str = yaml.dump(header, default_flow_style=False)
 
-    contents = "---\n{0}\n---\n\n#{1}\n\nInsert markdown contents here...\n".format(header_str, title)
+    contents = "---\n{0}\n---\n\n# {1}\n\nInsert markdown contents here...\n".format(header_str, title)
 
     filepath = os.path.join('contents', '{0}s'.format(content_type), filename)
-
-    print contents
-    print filepath
 
     if os.path.isfile(filepath):
         raise Exception('file {0} is already exist!'.format(filepath))
@@ -61,3 +58,4 @@ def create_content(content_type, title, slug=None):
     with open(filepath, 'w') as f:
         f.write(contents)
 
+    return filepath

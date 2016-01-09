@@ -37,7 +37,9 @@ def run():
             slug = args.command[3]
 
         if args.command[1] == 'page':
-            create_content('page', title, slug)
+            filepath = create_content('page', title, slug)
         if args.command[1] == 'post':
-            create_content('post', title, slug)
+            filepath = create_content('post', title, slug)
+
+        print('{0} created at {1}'.format(args.command[1], filepath))
 
