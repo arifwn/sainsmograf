@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from fsbp import commands
+import fsbp
 
 if __name__ == '__main__':
-    commands.run()
+    pass

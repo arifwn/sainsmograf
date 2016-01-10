@@ -11,14 +11,17 @@ PyYAML==3.11
 Pygments==2.0.2
 Unidecode==0.04.18
 Werkzeug==0.11.2
+argh==0.26.1
 ecdsa==0.13
 itsdangerous==0.24
 paramiko==1.16.0
+pathtools==0.1.2
 psycopg2==2.5.5
 pycrypto==2.6.1
 stevedore==0.13
 virtualenv==1.11.6
 virtualenv-clone==0.2.4
 virtualenvwrapper==4.2
+watchdog==0.8.3
 webassets==0.11.1
 wsgiref==0.1.2
