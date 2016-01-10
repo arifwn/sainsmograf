@@ -62,7 +62,7 @@
 
   </script>
 
-  {% if post.comments %}
+  {% if post.comments and site.disqus_domain %}
   <div id="disqus_thread"></div>
 
   <script>
@@ -74,7 +74,7 @@
   (function() {
   var d = document, s = d.createElement('script');
 
-  s.src = '//sainsmograf.disqus.com/embed.js';
+  s.src = '//{{ site.disqus_domain }}/embed.js';
 
   s.setAttribute('data-timestamp', +new Date());
   (d.head || d.body).appendChild(s);

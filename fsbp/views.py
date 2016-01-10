@@ -16,15 +16,10 @@ def get_site_options():
         'footer': app.config.get('SITE_FOOTER', ''),
         'main_menu': app.config.get('SITE_MAIN_MENU', []),
         'blog_title': app.config.get('BLOG_TITLE'),
-        'blog_cover': app.config.get('BLOG_COVER')
+        'blog_cover': app.config.get('BLOG_COVER'),
+        'google_analytics': app.config.get('GOOGLE_ANALYTICS'),
+        'disqus_domain': app.config.get('DISQUS_DOMAIN')
     }
-
-
-# @app.route('/')
-# def index():
-#     site = get_site_options()
-#     return render_template('index.html', site=site, static_navbar=True)
-
 
 @app.route('/atom.xml')
 def atom():

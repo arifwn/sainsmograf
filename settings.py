@@ -32,3 +32,7 @@ SITE_MAIN_MENU = [
                         'url': 'https://twitter.com/arifwn'
                     }
                  ]
+
+
+GOOGLE_ANALYTICS = 'UA-71593082-1'
+DISQUS_DOMAIN = 'sainsmograf.disqus.com'
