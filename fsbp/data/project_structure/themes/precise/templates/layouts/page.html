@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ post.title }}</title>
+  {% include 'head.html' %}
+</head>
+<body>
+
+  {% include 'content_header.html' %}
+
+  <article>
+    {% if post.cover and post.cover.image_type != 'parallax' %}
+    <h1>{{ post.title }}</h1>
+    {% if post.subtitle %}
+    <div class="meta">{{ post.subtitle }}</div>
+    {% endif %}
+    {% endif %}
+
+    {% if post.cover and post.cover.image %}
+    <div class="cover-image {% if post.cover.image_type == 'parallax' %} full-bleed {% endif %}">
+
+      {% if post.cover.image_type == 'parallax' %}
+      <div class="parallax" data-parallax="scroll" data-image-src="{{ post.cover.image|safe }}">
+
+        <h1 class="{{ post.title_class|default('') }}">{{ post.title }}</h1>
+        {% if post.subtitle %}
+        <div class="meta {{ post.subtitle_class|default('') }}">{{ post.subtitle }}</div>
+        {% endif %}
+
+      </div>
+      {% else %}
+      <img src="{{ post.cover.image|safe }}" alt="">
+      {% endif %}
+
+      {% if post.cover.image_credit %}
+      <div class="cover-image-credit">
+        Photo:
+        {% if post.cover.image_credit_url %}
+        <a href="{{ post.cover.image_credit_url }}">{{ post.cover.image_credit }}</a>
+        {% else %}
+        {{ post.cover.image_credit }}
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    <section>
+      {{ post.get_html_content()|safe }}
+    </section>
+
+  </article>
+
+  {% include 'scripts.html' %}
+
+  <script type="text/javascript">
+
+  $(function () {
+    var fromNow = moment($('article .meta .date').html(), "YYYY-MM-DD hh:mm:ss").fromNow();
+    $('article .meta .date').html(fromNow);
+  });
+
+  </script>
+
+  {% if post.comments and site.disqus_domain %}
+  <div id="disqus_thread"></div>
+
+  <script>
+  var disqus_config = function () {
+  this.page.url = "{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ request.path }}";
+  this.page.identifier = "{{ post.unique_slug }}";
+  };
+  
+  (function() {
+  var d = document, s = d.createElement('script');
+
+  s.src = '//{{ site.disqus_domain }}/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  {% endif %}
+
+  {% include 'content_footer.html' %}
+</body>
+</html>

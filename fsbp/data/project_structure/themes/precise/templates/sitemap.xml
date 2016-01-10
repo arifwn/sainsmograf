@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    {% for url in links %}
+    <url>
+        <loc>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ url[0] }}</loc>
+        <lastmod>{{ date.strftime('%Y-%m-%d') }}</lastmod>
+    </url>
+    {% endfor %}
+</urlset>

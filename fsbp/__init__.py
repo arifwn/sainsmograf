@@ -31,9 +31,10 @@ try:
     template_config_path = os.path.join(os.getcwd(), 'contents/themes/{0}/config.yml'.format(user_settings.get('THEME', 'precise')))
 
 except Exception, e:
-    print('unable to read user settings')
-    print(e)
-    traceback.print_exc()
+    # print('unable to read user settings')
+    # print(e)
+    # traceback.print_exc()
+    pass
 
 app = Flask(__name__, static_folder=static_folder, template_folder=template_folder)
 assets = Environment(app)
@@ -46,19 +47,20 @@ import fsbp.views
 
 # load theme
 
-import yaml
-with open(template_config_path) as f:
-    theme_config = yaml.load(f)
+if os.path.exists(template_config_path):
+    import yaml
+    with open(template_config_path) as f:
+        theme_config = yaml.load(f)
 
-js = Bundle(
-        *(theme_config.get('js', [])),
-        filters='rjsmin', output='js/build.js'
-        )
+    js = Bundle(
+            *(theme_config.get('js', [])),
+            filters='rjsmin', output='js/build.js'
+            )
 
-css = Bundle(
-        *(theme_config.get('css', [])),
-        output='css/build.css'
-        )
+    css = Bundle(
+            *(theme_config.get('css', [])),
+            output='css/build.css'
+            )
 
-assets.register('js_all', js)
-assets.register('css_all', css)
+    assets.register('js_all', js)
+    assets.register('css_all', css)

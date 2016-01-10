@@ -1,0 +1,9 @@
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="canonical" href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ request.path }}">
+
+  {% assets "css_all" %}
+  <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+  <link href="/static/img/favicon.png" rel="icon">

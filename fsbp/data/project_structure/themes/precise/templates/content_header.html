@@ -1,0 +1,11 @@
+<nav class="main-nav main-nav-absolute" {% if post and post.static_navbar %} data-float="no" {% endif %}>
+  <div class="nav-container">
+    <a href="/" class="logo"><img src="/static/img/logo.png" alt="{{ site.name }}"></a>
+
+    <ul class="nav-links">
+      {% for menu_item in site.main_menu %}
+      <li><a href="{{ menu_item.url|safe }}">{{ menu_item.text|safe }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

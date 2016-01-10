@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[{{ config.SITE_NAME }}]]></title>
+  <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/atom.xml" rel="self"/>
+  <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/"/>
+  <updated>{{ date.strftime('%Y-%m-%d') }}</updated>
+  <id>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/</id>
+  <author>
+    <name><![CDATA[{{ config.SITE_AUTHOR|default('Unknown') }}]]></name>
+    
+  </author>
+  <generator uri="http://sainsmograf.com/">Sainsmograf Static Generator</generator>
+
+  {% for post in posts %}
+  {% if post.published %}
+  <entry>
+    <title type="html"><![CDATA[Cryptography Primer]]></title>
+    <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ post.url }}"/>
+    <updated>{{ post.date.strftime('%Y-%m-%d') }}</updated>
+    <id>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ post.url }}</id>
+    <content type="html"><![CDATA[
+      {{ post.get_html_content()|safe }}
+    ]]></content>
+  </entry>
+  {% endif %}
+  {% endfor %}
+
+</feed>
