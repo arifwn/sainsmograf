@@ -1,22 +1,28 @@
 
 import os
+import sys
 import re
 from unidecode import unidecode
 
 import yaml
 import datetime
+import unicodedata
 
 _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
 
 def slugify(text, delim=u'-'):
     """Generates an ASCII-only slug."""
-    if isinstance(text, str):
-        text = unicode(text, "utf-8")
+    if sys.version_info[0] == 2:
+        if isinstance(text, str):
+            text = unicode(text, "utf-8")
 
     result = []
     for word in _punct_re.split(text.lower()):
         result.extend(unidecode(word).split())
-    return unicode(delim.join(result))
+    slug = delim.join(result)
+    if sys.version_info[0] == 2:
+        return unicode(slug)
+    return slug
 
 
 def create_content(content_type, title, slug=None):

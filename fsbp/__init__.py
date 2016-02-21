@@ -30,7 +30,7 @@ try:
     template_folder = os.path.join(os.getcwd(), 'contents/themes/{0}/templates'.format(user_settings.get('THEME', 'precise')))
     template_config_path = os.path.join(os.getcwd(), 'contents/themes/{0}/config.yml'.format(user_settings.get('THEME', 'precise')))
 
-except Exception, e:
+except Exception as e:
     # print('unable to read user settings')
     # print(e)
     # traceback.print_exc()

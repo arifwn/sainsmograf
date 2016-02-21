@@ -1,11 +1,17 @@
 
 import datetime
 import os
+import sys
 import markdown
-from StringIO import StringIO
+
 from functools import partial
 from flask import g
 from jinja2 import Template
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 from fsbp import app
 from fsbp.utils import slugify
@@ -41,7 +47,8 @@ class PostManager(object):
                 self.posts.append(post)
 
         # sort post by reverse chronological order
-        self.posts = sorted(self.posts, cmp=lambda post1, post2: cmp(post1.date, post2.date), reverse=True)
+        # self.posts = sorted(self.posts, cmp=lambda post1, post2: cmp(post1.date, post2.date), reverse=True)
+        self.posts = sorted(self.posts, key=lambda post: post.date, reverse=True)
 
         # group post by tags
         for post in self.posts:
@@ -151,10 +158,15 @@ class Page(object):
                 if dash_counter == 2:
                     break
 
-                if raw_header is None:
-                    raw_header = line.decode('UTF-8')
+                if sys.version_info[0] == 2:
+                    line_content = line.decode('UTF-8')
                 else:
-                    raw_header += line.decode('UTF-8')
+                    line_content = line
+
+                if raw_header is None:
+                    raw_header = line_content
+                else:
+                    raw_header += line_content
 
         return raw_header
 
@@ -171,10 +183,15 @@ class Page(object):
                 if dash_counter < 2:
                     continue
 
-                if raw_content is None:
-                    raw_content = line.decode('UTF-8')
+                if sys.version_info[0] == 2:
+                    line_content = line.decode('UTF-8')
                 else:
-                    raw_content += line.decode('UTF-8')
+                    line_content = line
+
+                if raw_content is None:
+                    raw_content = line_content
+                else:
+                    raw_content += line_content
 
         return raw_content
 
@@ -191,7 +208,7 @@ class Page(object):
 
         page_config = yaml.load(raw_header)
 
-        for key, value in page_config.iteritems():
+        for key, value in page_config.items():
             setattr(self, key, value)
 
         if self.slug is None:
