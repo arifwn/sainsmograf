@@ -10,6 +10,8 @@ cover:
   image_credit_url: https://www.flickr.com/photos/23636244@N08/2264878494/
 ---
 
+- [TipMap](https://chrome.google.com/webstore/detail/tipmap/bkkihmlfkglciicldmilojfceepeebbp). Quickly locate and display location or address from selected text in any webpage.
+
 - [T9 Predictive Text Input Emulator](/labs/t9-emulator/). Words prediction from numerical keypad input.
 
 - [pyWRFChemEmiss](https://github.com/arifwn/pyWRFChemEmiss). [WRF-Chem](http://ruc.noaa.gov/wrf/WG11/) data emission preparation tool. Convert and interpolate emission data from excel speadsheets into NetCDF format suitable for WRF-Chem.
