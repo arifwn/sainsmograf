@@ -226,6 +226,8 @@ article section {
 article section,
 article .meta,
 article h1,
+article h2,
+article h3,
 article hr,
 .content-list {
   width: 670px;
@@ -234,8 +236,22 @@ article hr,
   box-sizing: border-box;
 }
 
-article h1 {
+article h1,
+article h2,
+article h3 {
   margin-bottom: 0;
+}
+
+article h1 {
+  font-size: 25px;
+}
+
+article h2 {
+  font-size: 23px;
+}
+
+article h3 {
+  font-size: 21px;
 }
 
 article .meta {
@@ -246,6 +262,13 @@ article .meta {
 article section a {
   color: rgb(79, 79, 79);
   color: rgba(0, 0, 0, 0.7);
+}
+
+article blockquote {
+  color: #777;
+  border-left: solid 2px #777;
+  margin-left: 20px;
+  padding-left: 20px;
 }
 
 article section p > img {

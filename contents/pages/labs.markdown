@@ -10,7 +10,9 @@ cover:
   image_credit_url: https://www.flickr.com/photos/23636244@N08/2264878494/
 ---
 
-- [TipMap](https://chrome.google.com/webstore/detail/tipmap/bkkihmlfkglciicldmilojfceepeebbp). Quickly locate and display location or address from selected text in any webpage.
+- [Tiny Suspender](https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf). A Chrome extension. Unload idle tabs to reduce memory and cpu usage.
+
+- [TipMap](https://chrome.google.com/webstore/detail/tipmap/bkkihmlfkglciicldmilojfceepeebbp). A Chrome extension. Quickly locate and display location or address from selected text in any webpage.
 
 - [T9 Predictive Text Input Emulator](/labs/t9-emulator/). Words prediction from numerical keypad input.
 

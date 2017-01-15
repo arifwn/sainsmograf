@@ -15,9 +15,9 @@ Hint: use cycle button to cycle through all matching words.
     background: white;
     border: none;
     box-shadow: inset 0 0 7px rgba(0,0,0,0.7);
-" src="http://arifwn.github.io/t9-emulator/embed.html"></iframe>
+" src="https://www.sainsmograf.com/t9-emulator/embed.html"></iframe>
 
-<p><a href="http://arifwn.github.io/t9-emulator/" target="_BLANK">Open in New Window</a></p>
+<p><a href="https://www.sainsmograf.com/t9-emulator/" target="_BLANK">Open in New Window</a></p>
 
 ##Limitation
 

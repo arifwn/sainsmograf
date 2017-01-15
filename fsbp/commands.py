@@ -22,6 +22,8 @@ def run():
         host = args.command[1] if len(args.command) > 1 else '127.0.0.1'
         port = int(args.command[2]) if len(args.command) > 2 else 5000
 
+        print("running on http://{0}:{1}".format(host, port))
+
         contents_dir = app.config.get('STATIC_CONTENTS_DIR', 'contents')
         extra_dirs = [os.path.join(os.getcwd(), contents_dir, 'pages'), os.path.join(os.getcwd(), contents_dir, 'posts')]
         extra_files = extra_dirs[:]

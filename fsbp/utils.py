@@ -8,7 +8,7 @@ import yaml
 import datetime
 import unicodedata
 
-_punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+_punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\:\[\\\]^_`{|},.]+')
 
 def slugify(text, delim=u'-'):
     """Generates an ASCII-only slug."""
