@@ -31,10 +31,10 @@ If you use Chrome as your primary browser, you'll probably aware of its memory a
 
 The Chrome dev team has performed various optimization with great results. Chrome hogs less resources now, which is great for casual users. But for users who open dozens and dozens of tabs at the same time (even hundreds!), this improvement is not enough. That's why we rely on tab suspender extensions such as The Great Suspender to reduce Chrome's CPU and memory usage when it has so many background tabs.
 
-I've been using The Great Suspender for a while, and it actually works great. One day, I decided I want to build a suspender extension on my own, and the result is [Tiny Suspender](https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf). It actually has been released in Chrome Web Store for a while now. It even gather ~250 users so far. Thanks to feedbacks from those brave users (they're essentially alpha-testing the extension on their own!), Tiny Suspender finally has all features I ever want. In fact, without those users I'll probably would leave Tiny Suspender in barely usable state (since it was good enough for my own use). Thanks a lot guys!
+I've been using The Great Suspender for a while, and it actually works great. One day, I decided I want to build a suspender extension on my own, and the result is [Tiny Suspender](https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf). It actually has been released in Chrome Web Store for a while now. It even gather ~250 users so far. Thanks to feedbacks from those brave users (they're essentially alpha-testing the extension on their own!), Tiny Suspender finally has all features I ever want. In fact, without those users I probably would leave Tiny Suspender in barely usable state (since it was good enough for my own use). Thanks a lot guys!
 
 
-### So what so special about Tiny Suspender?
+### So what's so special about Tiny Suspender?
 
 Usual features you would expect from a suspender plugin:
 
@@ -51,9 +51,9 @@ Usual features you would expect from a suspender plugin:
 - Keyboard Shortcuts: Suspend tabs without moving your hand away from your keyboard.
 
 
-Tiny Suspender also includes an experimental feature: suspending background tabs using [Chrome Tab Discard API](https://developers.google.com/web/updates/2015/09/tab-discarding). This experimental feature must be enabled from Tiny Suspender settings and can only works on background tabs, but it's very promising. It can restore the state of suspended page quite reliably, including form state and scroll position. But it does has its share of annoyance, such as it would reloads all suspended tabs if you ever restart your browser and restore your last browsing session.
+Tiny Suspender also includes an experimental feature: suspending background tabs using [Chrome Tab Discard API](https://developers.google.com/web/updates/2015/09/tab-discarding). This experimental feature must be enabled from Tiny Suspender settings and can only works on background tabs, but it's very promising. It can restore the state of suspended page quite reliably, including form state and scroll position. But it does has its share of annoyance (which is why I disable it by default), such as it would reloads all suspended tabs if you ever restart your browser and restore your last browsing session.
 
-My goal for Tiny Suspender is to keep it true to its name: tiny. I won't add any dependencies if I can help it to keep the code size (and extension memory footprint) minimal. But of course I'm open to suggestions. In fact, several of current Tiny Suspender's features are the results of users' suggestions. Shoot me an email if you have any suggestion or bug report!
+My goal for Tiny Suspender is to keep it true to its name: tiny. I won't add any dependencies if I can help it to keep the code size (and extension memory footprint) minimal. But of course I'm open to suggestions. In fact, several of current Tiny Suspender's features are there thanks to users' suggestions. Shoot me an email if you have any suggestion or bug report!
 
 Extension page: [https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf](https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf)
 
