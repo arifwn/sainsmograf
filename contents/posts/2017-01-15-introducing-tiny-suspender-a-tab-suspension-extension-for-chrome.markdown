@@ -27,7 +27,7 @@ excerpt: Like The Great Suspender, but with different set of features and implem
 
 <i>TL;DR Download it here: [https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf](https://chrome.google.com/webstore/detail/tiny-suspender/bbomjaikkcabgmfaomdichgcodnaeecf) </i>
 
-If you use Chrome as your primary browser, you'll probably aware of its memory and resource hogging nature. Every time you open a new tab, a new process get spawned that dedicated only for that tab. It's great from reliability and security stand point, but not so great when you try to cut down resource consumption which can be critical if you're on battery power.
+If you use Chrome as your primary browser, you probably aware of its memory and resource hogging nature. Every time you open a new tab, a new process get spawned that dedicated only for that tab. It's great from reliability and security stand point, but not so great when you try to cut down resource consumption which can be critical if you're on battery power (since higher resource usage typically translate to higher power consumption).
 
 The Chrome dev team has performed various optimization with great results. Chrome hogs less resources now, which is great for casual users. But for users who open dozens and dozens of tabs at the same time (even hundreds!), this improvement is not enough. That's why we rely on tab suspender extensions such as The Great Suspender to reduce Chrome's CPU and memory usage when it has so many background tabs.
 
