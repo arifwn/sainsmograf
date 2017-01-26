@@ -25,7 +25,11 @@ def run():
         print("running on http://{0}:{1}".format(host, port))
 
         contents_dir = app.config.get('STATIC_CONTENTS_DIR', 'contents')
-        extra_dirs = [os.path.join(os.getcwd(), contents_dir, 'pages'), os.path.join(os.getcwd(), contents_dir, 'posts')]
+        extra_dirs = [
+                        os.path.join(os.getcwd(),contents_dir, 'pages'),
+                        os.path.join(os.getcwd(), contents_dir, 'posts'),
+                        os.path.join(os.getcwd(), contents_dir, 'media')
+                    ]
         extra_files = extra_dirs[:]
         for extra_dir in extra_dirs:
             for dirname, dirs, files in os.walk(extra_dir):

@@ -108,6 +108,43 @@ class PageManager(object):
             print('registered %s to %s' % (page, page.url))
 
 
+class MediaManager(object):
+    def __init__(self, directory=None):
+        self.file_contents_dir = 'media'
+        self.directory = self.get_content_dir(directory)
+        self.media = []
+
+    def get_content_dir(self, directory=None):
+        if (not directory):
+            contents_dir = app.config.get('STATIC_CONTENTS_DIR', 'contents')
+
+            directory = os.path.join(os.getcwd(), contents_dir, self.file_contents_dir)
+            if contents_dir.find('/') == 0:
+                directory = os.path.join(contents_dir, self.file_contents_dir)
+
+        return directory
+
+    def load_media(self):
+        self.media = []
+
+        for root, subfolders, files in os.walk(self.directory):
+            for media_file in files:
+                if media_file.startswith('.') == True:
+                    continue
+
+                media_path = os.path.join(root, media_file)
+                self.media.append(media_path)
+
+    def register_views(self, view_func):
+        for media_path in self.media:
+            partial_view_func = partial(view_func, media_path=media_path)
+            media_url = os.path.join('/', self.file_contents_dir, media_path[len(self.directory) + 1:])
+
+            app.add_url_rule(media_url, media_url, partial_view_func)
+
+            print('registered %s' % (media_url,))
+
+
 
 class Page(object):
     def __init__(self, content_file):
@@ -277,14 +314,17 @@ class Post(Page):
 def make_views():
     post_manager = PostManager()
     page_manager = PageManager()
+    media_manager = MediaManager()
 
     post_manager.load_posts()
     page_manager.load_pages()
+    media_manager.load_media()
 
-    from fsbp.views import view_page, view_post
+    from fsbp.views import view_page, view_post, view_media
 
     post_manager.register_views(view_post)
     page_manager.register_views(view_page)
+    media_manager.register_views(view_media)
 
     app.config['post_manager'] = post_manager
     app.config['page_manager'] = page_manager

@@ -1,7 +1,7 @@
 
 from datetime import datetime
 from flask import Flask, url_for, redirect
-from flask import Response, render_template
+from flask import Response, render_template, send_file
 from flask import g
 
 from fsbp import app
@@ -95,6 +95,10 @@ def view_page(page):
 def view_post(post):
     site = get_site_options()
     return render_template('layouts/%s.html' % post.layout, site=site, post=post)
+
+
+def view_media(media_path):
+    return send_file(media_path)
 
 
 def view_tag(tag, posts):

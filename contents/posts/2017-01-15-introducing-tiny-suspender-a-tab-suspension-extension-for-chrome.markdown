@@ -14,9 +14,9 @@ tags:
 - Chrome
 - Extension
 thumbnail:
-  image: https://lh3.googleusercontent.com/FDfRMl1HqcFLGlUK67bPWWgTEsfccL4ClLgc4jNpwpeEhyp5bhHqMcKSqqEeay02dQ6wQb9dRlk8H_GUXkvN6IBYaS1yDn_cZgY
+  image: /media/uploads/tiny-suspender.jpg
 cover:
-  image: https://lh3.googleusercontent.com/FDfRMl1HqcFLGlUK67bPWWgTEsfccL4ClLgc4jNpwpeEhyp5bhHqMcKSqqEeay02dQ6wQb9dRlk8H_GUXkvN6IBYaS1yDn_cZgY
+  image: /media/uploads/tiny-suspender.jpg
   image_type: parallax
 title: 'Introducing Tiny Suspender: A Tab Suspension Extension for Chrome'
 excerpt: Like The Great Suspender, but with different set of features and implementation.
