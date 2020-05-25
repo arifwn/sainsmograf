@@ -259,7 +259,7 @@ class Page(object):
         if self.format == 'html':
             return raw_content
 
-        html = markdown.markdown(raw_content, extensions=['markdown.extensions.codehilite', 'markdown.extensions.footnotes', 'markdown.extensions.tables'])
+        html = markdown.markdown(raw_content, extensions=['codehilite', 'footnotes', 'tables'])
         return html
 
     def get_txt_content(self):
@@ -269,7 +269,7 @@ class Page(object):
             template = Template('{{ content|striptags }}!')
             raw_content = template.render(content=raw_content)
         elif self.format == 'markdown':
-            raw_content = markdown.markdown(raw_content, extensions=['markdown.extensions.codehilite', 'markdown.extensions.footnotes', 'markdown.extensions.tables'])
+            raw_content = markdown.markdown(raw_content, extensions=['codehilite', 'footnotes', 'tables'])
             template = Template('{{ content|striptags }}!')
             raw_content = template.render(content=raw_content)
 
