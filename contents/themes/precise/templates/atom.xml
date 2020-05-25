@@ -4,20 +4,20 @@
   <title><![CDATA[{{ config.SITE_NAME }}]]></title>
   <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/atom.xml" rel="self"/>
   <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/"/>
-  <updated>{{ date.strftime('%Y-%m-%d') }}</updated>
+  <updated>{{ date.isoformat() }}</updated>
   <id>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/</id>
   <author>
     <name><![CDATA[{{ config.SITE_AUTHOR|default('Unknown') }}]]></name>
     
   </author>
-  <generator uri="http://sainsmograf.com/">Sainsmograf Static Generator</generator>
+  <generator uri="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}/">Sainsmograf Static Generator</generator>
 
   {% for post in posts %}
   {% if post.published %}
   <entry>
     <title type="html"><![CDATA[Cryptography Primer]]></title>
     <link href="{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ post.url }}"/>
-    <updated>{{ post.date.strftime('%Y-%m-%d') }}</updated>
+    <updated>{{ post.date.isoformat() }}</updated>
     <id>{{ config.TARGET_SERVER_PROTOCOL|default('http') }}://{{ config.TARGET_SERVER_NAME|default('localhost') }}{{ post.url }}</id>
     <content type="html"><![CDATA[
       {{ post.get_html_content()|safe }}
