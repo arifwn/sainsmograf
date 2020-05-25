@@ -1,5 +1,5 @@
 
-- requires python 2.7/3.x and flask
+- requires python 3.x and flask
 - run: `./runserver`
 
 - create post: `./static.py add post "title" [slug]`

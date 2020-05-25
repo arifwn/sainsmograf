@@ -4,7 +4,7 @@ from __future__ import absolute_import
 import os
 
 from flask import Flask
-from flask.ext.assets import Environment, Bundle
+from flask_assets import Environment, Bundle
 
 # load user settings
 import traceback

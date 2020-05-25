@@ -4,3 +4,4 @@
 .webassets-cache
 __pycache__
 .cache
+.venv
