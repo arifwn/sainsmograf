@@ -26,4 +26,4 @@ cover:
 
 - [log-analyzers](https://github.com/arifwn/log-analyzers). Extract visitor data from Apache & Nginx log files.
 
-- [container-backup](https://github.com/arifwn/container-backup). Backup your databases and volume data into Backblaze B2 bucket.
+- [container-backup](https://github.com/arifwn/container-backup). Backup your databases and volume data into a Backblaze B2 bucket.
