@@ -8,10 +8,7 @@ from functools import partial
 from flask import g
 from jinja2 import Template
 
-try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
+from io import StringIO
 
 from fsbp import app
 from fsbp.utils import slugify
