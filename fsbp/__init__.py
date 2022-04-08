@@ -50,7 +50,7 @@ import fsbp.views
 if os.path.exists(template_config_path):
     import yaml
     with open(template_config_path) as f:
-        theme_config = yaml.load(f)
+        theme_config = yaml.load(f, Loader=yaml.FullLoader)
 
     js = Bundle(
             *(theme_config.get('js', [])),

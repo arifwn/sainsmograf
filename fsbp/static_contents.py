@@ -243,7 +243,7 @@ class Page(object):
 
         import yaml
 
-        page_config = yaml.load(raw_header)
+        page_config = yaml.load(raw_header, Loader=yaml.FullLoader)
 
         for key, value in page_config.items():
             setattr(self, key, value)

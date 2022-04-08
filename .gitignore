@@ -2,6 +2,7 @@
 *.sublime-workspace
 *.pyc
 *.code-workspace
+.tool-versions
 .webassets-cache
 __pycache__
 .cache
