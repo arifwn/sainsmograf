@@ -1,10 +1,12 @@
+import os
 
 TARGET_SERVER_NAME = 'www.sainsmograf.com'
 TARGET_SERVER_PROTOCOL = 'https'
 SITE_NAME = 'Sainsmograf'
 SITE_AUTHOR = 'Arif Widi Nugroho'
-FREEZER_DESTINATION = '/home/arif/projects/arifwn.github.io'
+FREEZER_DESTINATION = os.environ.get('FREEZER_DESTINATION', '/home/arif/projects/arifwn.github.io')
 FREEZER_DESTINATION_IGNORE = ['.*']
+FREEZER_IGNORE_MIMETYPE_WARNINGS = True
 BLOG_ROOT_URL = '/blog/'
 BLOG_TITLE = 'Archive'
 BLOG_COVER = {

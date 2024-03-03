@@ -27,7 +27,6 @@ Hint: use cycle button to cycle through all matching words.
 
 - testing: 8378464
 - super: 78737
-- mario: 62746
 - legend: 534363
 - and many more (over 2MB of english words)&hellip;
 
